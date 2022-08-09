@@ -1,0 +1,49 @@
+body{
+    background-color: #2158ac;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main{
+    margin-top: 30vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.container1,
+.container2, 
+.container3,
+.container4{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 20px;
+    background-color:  #113975;
+    border-radius: 20px;
+}
+
+textarea{
+    margin-top: 10px;
+    resize: none;
+}
+
+#telefones{
+    resize: vertical;
+}
+
+button{
+    margin-top: 4px;
+    background-color: #568bdb ;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+input{
+    padding: 5px;
+}

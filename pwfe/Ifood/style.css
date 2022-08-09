@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.item-lista {
+    width: 70vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#info{
+    width: 100%;
+    margin-left: 15px;
+}
+
+#thumb{
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    transition: 1s;
+}
+
+#like{
+    width: 3vw;
+    height: 3vw;;
+    cursor: pointer;
+}
+
+#avaliacao{
+    width: 1.5vw;
+    height: 1.5vw;
+}
