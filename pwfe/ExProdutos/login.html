@@ -15,7 +15,7 @@
     </header>
     <div class="page-login">
         <div class="card-login">
-            <form action="">
+            <div>
                 <div class="form-control">
                     <label for="username">Usuário</label>
                     <input type="text" name="username" id="inpUsername" required>
@@ -24,9 +24,11 @@
                     <label for="senha">Senha</label>
                     <input type="password" name="senha" id="inpSenha" required>
                 </div>
-                <button type="submit" class="btn">LOGIN</button>
-            </form>
+                <span class="error escondes">Credenciais Inválidas</span>
+                <button onclick="validaUsuario()" class="btn">LOGIN</button>
+            </div>
         </div>
     </div>
 </body>
+<script src="script.js"></script>
 </html>

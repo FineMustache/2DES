@@ -9,7 +9,7 @@ html, body{
 
 .nav-login{
     height: 8vh;
-    background-color: rgb(7, 93, 192);
+    background-color: rgb(17, 17, 17);
     color: #fff;
     display: flex;
     align-items: center;
@@ -38,7 +38,7 @@ html, body{
     align-items: center;
 }
 
-.card-login > form{
+.card-login > div{
     height: 30%;
     width: 100%;
     display: flex;
@@ -54,18 +54,28 @@ html, body{
     margin-bottom: 30px;
 }
 
-.form-control > input{
-    
+.error{
+    color: red;
+    margin-bottom: 10px;
+}
+
+.escondes{
+    visibility: hidden;
 }
 
 .btn{
     border: none;
-    background-color: rgb(7, 93, 192);
+    background-color: rgb(17, 17, 17);
     color: white;
     padding: 10px;
     width: 30%;
     border-radius: 5px;
     font-size: 14pt;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: rgb(12, 12, 12);
 }
 
 /* MAIN */
@@ -74,7 +84,10 @@ html, body{
     height: 8vh;
     display: flex;
     justify-content: space-between;
-    background-color: rgb(7, 93, 192);
+    background-color: rgb(17, 17, 17);
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .nav-left{
@@ -93,7 +106,7 @@ html, body{
 }
 
 .nav-left > a:hover{
-    background-color: rgb(6, 87, 180);
+    background-color: rgb(12, 12, 12);
 }
 
 .nav-right{
@@ -111,53 +124,86 @@ html, body{
     color: white;
 }
 
-.nav-right > img{
-    height: 80%;
+.foto-usuario{
+    height: 60px;
+    width: 60px;
     margin-right: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
 }
 
 .page-main{
     background-color: rgb(228, 228, 228);
-    height: calc(100% - 8vh);
+    min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .prod-container{
-    width: 35%;
+    width: 55%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding-top: 10vh;
+}
+
+.modelo{
+    visibility: hidden;
+    display: none;
 }
 
 .prod-card{
     margin-bottom: 25px;
-    height: 300px;
+    height: 450px;
+    background-color: #fff;
+    width: 300px;
+    border-radius: 10px;
 }
 
 .prod-card-image{
-    height: 50%;
     width: 100%;
+    height: 65%;
+    background-image: url(https://cdn.shopify.com/s/files/1/0367/4767/3731/products/vestido-sodre-azul-p-200000347-657.jpg?v=1631648731);
+    background-size: cover;
 }
 
-.prod-card-image > img{
-    width: 100%;
-    height: 100%;
-}
-
-.prod-card-info{
-    height: 50%;
-    display: flex;
-}
-
-.info{
-    height: 100%;
+.prod-info{
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     justify-content: space-between;
+    padding: 20px;
+    height: calc(35% - 40px);
 }
 
-.cta > img{
-    width: 10px;
+.prod-data{
+    display: flex;
+    flex-direction: column;
+}
+
+#prodName{
+    font-size: 18pt;
+    word-wrap: break-word;
+}
+
+#prodPreco{
+    font-size: 14pt;
+    margin-top: 5px;
+}
+
+.btn-comprar{
+    align-self: flex-end;
+    border: none;
+    padding: 10px 25px;
+    background-color: rgb(32, 32, 32);
+    color: white;
+    border-radius: 0 0 10px 0;
+    font-size: 13pt;
+    cursor: pointer;
+}
+
+.btn-comprar:hover{
+    background-color: rgb(5, 5, 5);
 }
