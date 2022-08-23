@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastro</title>
+</head>
+<body onkeyup="enableBtn()">
+    <div class="page">
+        <div class="card-cadastro">
+            <div class="form-control">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome" required>
+            </div>
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="form-control">
+                <label for="senha">Senha</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div class="form-control">
+                <label for="senhaConf">Confirme a Senha</label>
+                <input type="password" name="passwordConf" id="passwordConf" onkeyup="pwCheck(this)" required>
+                <span class="erro-senha hidden">As senhas não coincidem</span>
+            </div>
+            <div class="form-control">
+                <label for="tel">Telefone</label>
+                <input type="tel" name="tel" id="tel" required>
+            </div>
+            <div class="form-control">
+                <label for="cep">CEP</label>
+                <input type="text" name="cep" id="cep" onkeyup="CEPCheck(this)" maxlength="8" required>
+                <span class="erro hidden">CEP desconhecido</span>
+            </div>
+            <div class="form-control">
+                <label for="log">Logradouro</label>
+                <input type="text" name="log" id="log" disabled required>
+            </div>
+            <div class="form-control">
+                <label for="complemento">Complemento</label>
+                <input type="text" name="complemento" id="complemento" disabled required>
+            </div>
+            <div class="form-control">
+                <label for="bairro">Bairro</label>
+                <input type="text" name="bairro" id="bairro" disabled required>
+            </div>
+            <div class="form-control">
+                <label for="cidade">Cidade</label>
+                <input type="text" name="cidade" id="cidade" disabled required>
+            </div>
+            <div class="form-control">
+                <label for="estado">Estado</label>
+                <input type="text" name="estado" id="estado" disabled required>
+            </div>
+            <button class="btn" onclick="cadastrar()" disabled>Cadastrar</button>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

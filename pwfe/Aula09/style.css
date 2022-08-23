@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+html, body{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Questrial', sans-serif;
+}
+
+.page-login{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dddddd;
+}
+
+.card-login{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 15px;
+    align-items: center;
+    box-shadow: 5px 5px 0 rgb(170, 170, 170);
+}
+
+.card-title{
+    font-size: 20pt;
+    margin-bottom: 40px;
+}
+
+.form-control{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: center;
+    position: relative;
+}
+
+label{
+    position: absolute;
+    left: 40px;
+    transition: .3s;
+    z-index: 2;
+}
+
+input{
+    padding: 5px;
+    outline: none;
+    border-style: solid;
+}
+
+input:focus{
+    border-color: rgb(1, 84, 209);
+    box-shadow: 0 0 3px rgb(1, 84, 209);
+}
+
+input:focus + label, input:valid + label{
+    transform: translateY(-95%) scale(.8);
+    color: rgb(1, 84, 209);
+}
+
+.form-control > span{
+    width: 0;
+    height: 5px;
+    transition: .15s;
+    position: absolute;
+    background-color: #fff;
+    top: -2px;
+    left: 40px;
+}
+
+input:focus + label + span, input:valid + label + span{
+    width: 40px;
+}
+
+input:focus + label + .mask-senha, input:valid + label + .mask-senha{
+    width: 50px;
+}
+
+.btn{
+    margin-top: 20px;
+    font-size: 15pt;
+    border: 1px solid rgb(1, 84, 209);
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: rgb(1, 84, 209);
+    transition: .5s;
+    cursor: pointer;
+}
+
+.btn:hover{
+    color: #fff;
+    background-color: rgb(1, 84, 209);
+}
+
+.error{
+    font-size: 10pt!important;
+    width: 50%;
+    margin-top: 5px;
+    color: #ff0000;
+    text-align: center;
+}
+
+.hidden{
+   visibility: hidden;
+}
+
+.page-main{
+    min-height: 92vh;
+    display: flex;
+    justify-content: center;
+    background-color: #dddddd;
+}
+
+.posts{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    width: 40%;
+}
+
+.posts-i{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 0 rgb(170, 170, 170);
+    margin-bottom: 20px;
+}
+
+.post-header{
+    font-size: 20pt;
+}
+
+.post-name{
+    color: rgb(1, 84, 209);
+}
+
+.post-header-div{
+    color: rgb(170, 170, 170);
+}
+
+.post-body{
+    word-wrap: break-word;
+}
+
+.modelo{
+    display: none;
+}
+
+header{
+    padding: 0;
+}
+
+nav{
+    height: 8vh;
+    background-color: rgb(1, 84, 209);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 14pt;
+}
+
+nav > span{
+    padding: 0 40px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logout:hover{
+    background-color: rgb(0, 75, 187);
+    cursor: pointer;
+}
+
+.brand-name{
+    color: rgb(1, 84, 209);
+}
