@@ -91,3 +91,10 @@ FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
+
+create view vw_clientes as
+select c.id_cliente, c.cpf, c.nome, c.cep, c.numero, c.complemento, t.numero as telefone from clientes c
+inner join telefones t
+on c.id_cliente = t.id_cliente;
+
+select * from vw_clientes;

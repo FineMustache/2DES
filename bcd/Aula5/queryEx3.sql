@@ -44,3 +44,10 @@ IGNORE 1 ROWS;
 
 select * from mot_linha;
 
+create view vw_motoristas as
+select m.cpf, m.nome_motorista, t.telefone as telefone from motoristas m
+inner join telefones t
+on m.cpf = t.cpf;
+
+select * from vw_motoristas;
+
