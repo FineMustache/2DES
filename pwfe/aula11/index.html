@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Academia - Alunos</title>
+</head>
+<body onload="carregar()">
+    <header>
+        <nav>
+            <span id="alunos">Alunos</span>
+            <span onclick="displayAparelhos()" id="aparelhos">Aparelhos</span>
+            <span onclick="displayExercicios()" id="exercicios">Exercícios</span>
+            <span id="fichas">Fichas</span>
+        </nav>
+    </header>
+    <div class="page-alunos">
+        <div class="card modelo-aluno">
+            <div class="card-top">
+                <span id="nomeAluno">Astolfo Pereira Silva</span>
+            </div>
+            <div class="card-bottom">
+                <span id="nascAluno">28/06/2004</span>
+                <span class="divider">|</span>
+                <span id="sexoAluno">M</span>
+                <span class="divider">|</span>
+                <span id="pesoAluno">80,0</span>
+            </div>
+            <div class="card-tel">
+            </div>
+        </div>
+    </div>
+    <div class="page-aparelhos escondido">
+        <div class="card card-aparelhos modelo-aparelho">
+            <div class="card-top">
+                <span id="nomeAparelho">Astolfo Pereira Silva</span>
+            </div>
+        </div>
+    </div>
+    <div class="page-exercicios escondido">
+        <div class="card card-exercicios modelo-exercicio">
+            <div class="card-top">
+                <span id="descExercicio">Negociador de coisa</span>
+            </div>
+            <div class="card-bottom">
+                <span id="grupoMusc">Costas</span>
+                <span id="aparelhoId">1</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

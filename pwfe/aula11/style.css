@@ -1,0 +1,124 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+body{
+    min-height: 95vh;
+    background-color: #ddd;
+}
+
+nav{
+    background-color: blue;
+    height: 5vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    display: flex;
+}
+
+nav > span{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 14pt;
+}
+
+nav > span:hover{
+    background-color: rgb(0, 0, 190);
+    cursor: pointer;
+}
+
+.page-alunos{
+    margin-top: 5vh;
+    display: flex;
+    padding: 20px 4vw;
+    column-gap: 4vw;
+    row-gap: 4vh;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.page-aparelhos{
+    margin-top: 5vh;
+    display: flex;
+    padding: 20px 4vw;
+    column-gap: 4vw;
+    row-gap: 4vh;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.page-exercicios{
+    margin-top: 5vh;
+    display: flex;
+    padding: 20px 4vw;
+    column-gap: 4vw;
+    row-gap: 4vh;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px;
+    height: 150px;
+    background-color: #fff;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: 5px 5px 0 #aaa;
+    width: 20vw;
+}
+
+.card-top{
+    font-size: 20pt;
+}
+
+.card-bottom{
+    display: flex;
+    margin: 15px 0;
+}
+
+#nascAluno{
+    width: 36%;
+}
+
+#sexoAluno{
+    width: 30%;
+    text-align: center;
+}
+
+#pesoAluno{
+    width: 30%;
+    text-align: center;
+}
+#divider{
+    width: 1%;
+}
+
+.card-tel{
+    display: flex;
+    justify-content: space-between;
+}
+
+.modelo-aluno{
+    display: none;
+}
+
+.modelo-aparelho{
+    display: none;
+}
+
+.card-exercicios>.card-bottom{
+    justify-content: space-between;
+}
+
+.escondido{
+    display: none;
+}
