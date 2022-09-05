@@ -50,6 +50,30 @@ app.get("/produtos/:cod", (req,res) => {
     })
 })
 
+app.delete("/produto", (req, res) => {
+    let query = `DELETE FROM produtos WHERE cod = '${req.body.cod}'`
+
+    conDB.query(query, (err, result) =>{
+        if (err == null) {
+            res.status(200).json(req.body).end()
+        } else {
+            res.status(400).json(err).end()
+        }
+    })
+})
+
+app.put("/produto", (req, res) =>{
+    let query = `UPDATE produtos SET cod = '${req.body.cod}', nome = '${req.body.nome}', qntd = ${req.body.qntd}, preco = ${req.body.valor} WHERE cod = '${req.body.cod}'`
+
+    conDB.query(query, (err, result) =>{
+        if (err == null) {
+            res.status(200).json(req.body).end()
+        } else {
+            res.status(400).json(err).end()
+        }
+    })
+})
+
 app.listen(5000, () =>{
     console.log("Respondendo 5000")
 })
