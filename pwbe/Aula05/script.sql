@@ -13,3 +13,15 @@ CREATE TABLE produtos(
 
 insert into produtos values (DEFAULT, 'CJ1234', 'Calça Jeans Super Confortável', 10, 90.00);
 INSERT INTO produtos VALUES(DEFAULT, 'MO5214', 'Moletom Super Estiloso', 5, 60.00);
+
+CREATE TABLE funcionarios (
+    id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    matricula VARCHAR(10) NOT NULL UNIQUE,
+    nome VARCHAR(153) NOT NULL,
+    cargo VARCHAR(50) NOT NULL,
+    salario FLOAT(6, 2) NOT NULL,
+    cpf VARCHAR(11) NOT NULL
+);
+
+INSERT INTO funcionarios VALUES (DEFAULT, 'SP1234', 'José Roberto', 'Gerente', 5320.00, '72704721068');
+INSERT INTO funcionarios VALUES (DEFAULT, 'SP1245', 'Carlos Alberto', 'Vendedor', 2530.00, '70601631072');
