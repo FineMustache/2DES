@@ -100,3 +100,23 @@ input{
     padding: 5px 10px;
     margin-top: 10px;
 }
+
+.cadastrar{
+    display: flex;
+    gap: 5px;
+    padding: 10px 15px;
+    border: 1px solid rgb(44, 124, 177);
+    color: rgb(44, 124, 177);
+    font-size: 12pt;
+    border-radius: 5px;
+}
+
+.cadastrar:hover{
+    background-color: rgb(44, 124, 177);
+    color: #fff;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}

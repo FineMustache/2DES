@@ -12,14 +12,15 @@
     <aside>
         <nav>
             <ul>
-                <li>Gerenciar Produtos</li>
-                <li>Gerenciar Funcionários</li>
-                <li>Efetuar Venda</li>
-                <li>Relatório de Vendas</li>
+                <li><a href="#">Gerenciar Produtos</a></li>
+                <li><a href="../gerenFuncionarios/index.html">Gerenciar Funcionários</a></li>
+                <li><a href="#">Efetuar Venda</a></li>
+                <li><a href="#">Relatório de Vendas</a></li>
             </ul>
         </nav>
     </aside>
     <main>
+        <button class="cadastrar" onclick="abrirModalCadastro()">Cadastrar <i class="fa-regular fa-file-lines"></i></button>
         <table>
             <thead>
                 <tr>
@@ -51,7 +52,7 @@
                 <p>Tem certeza que deseja remover o produto de código : <span id="cod"></span></p>
             </div>
             <div class="modal-content-footer">
-                <button onclick="editarProduto()" class="btn confirm">Confirmar</button>
+                <button onclick="excluirProduto()" class="btn confirm">Confirmar</button>
                 <button class="btn cancel">Cancelar</button>
             </div>
         </div>
@@ -67,7 +68,7 @@
                 <input type="number" id="valor" placeholder="Valor Unitário">
             </div>
             <div class="modal-content-footer">
-                <button onclick="editarProduto()" class="btn confirm">Editar</button>
+                <button onclick="editarProduto()" class="btn confirm btnEditCad">Editar</button>
                 <button class="btn cancel">Cancelar</button>
             </div>
         </div>
