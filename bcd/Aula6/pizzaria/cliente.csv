@@ -1,0 +1,6 @@
+cliente_id;telefone;nome;logradouro;numero;complemento;bairro;referencia
+1;(19)99999-9999;Gandalf Olorin;Rua dos Magos;567;Torre;Valinor;Perto da Torre de Saruman
+2;(19)99896-1000;Sam Gamgee;Pes Peludos;445;Casa;Condado;Entrada do Condado
+3;(19)99669-1041;Bilbo Bolseiro;Pes Peludos;450;Casa;Condado;Entrada do Condado
+4;(19)99999-1087;Frodo Bolseiro;Pes Peludos;450;Casa;Condado;Entrada do Condado
+5;(19)99789-1003;Aragorn Telcontar;Rua dos Reis;789;Castelo;Gondor;Lugar mais alto

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c68ccb89e7.js" crossorigin="anonymous"></script>
+    <title>Funcionários</title>
+</head>
+<body>
+    <aside>
+        <nav>
+            <ul>
+                <li><a href="../gerenProdutos/index.html">Gerenciar Produtos</a></li>
+                <li><a href="#">Gerenciar Funcionários</a></li>
+                <li><a href="#">Efetuar Venda</a></li>
+                <li><a href="#">Relatório de Vendas</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <button class="cadastrar" onclick="abrirModalCadastro()">Cadastrar <i class="fa-regular fa-file-lines"></i></button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Matrícula</th>
+                    <th>Nome</th>
+                    <th>Cargo</th>
+                    <th>Salário</th>
+                    <th>CPF</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="lista-funcionarios">
+                <tr class="linhamodelo model">
+                    <td>SP9876</td>
+                    <td>Mario Alberto</td>
+                    <td>Auxiliar de Ajudante de Assistente de Servente de Pedreiro</td>
+                    <td>R$ 999,99</td>
+                    <td>99999999999</td>
+                    <td><button id="exclui"><i class="fa-solid fa-trash icone"></i></button></td>
+                    <td><button id="edita"><i class="fa-solid fa-pen-to-square icone"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <div class="modal excluir model">
+        <div class="modal-content">
+            <button onclick="fecharModalExcluir()"><i class="fa-solid fa-xmark icone"></i></button>
+            <div class="modal-content-body">
+                <span class="modal-title">Alerta de Exclusão</span>
+                <p>Tem certeza que deseja remover o funcionário de matrícula: <span id="cod"></span></p>
+            </div>
+            <div class="modal-content-footer">
+                <button onclick="excluirFuncionario()" class="btn confirm">Confirmar</button>
+                <button class="btn cancel">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal editar model">
+        <div class="modal-content">
+            <button onclick="fecharModalEditar()"><i class="fa-solid fa-xmark icone"></i></button>
+            <div class="modal-content-body">
+                <input type="text" id="matricula" placeholder="Código de Funcionario">
+                <input type="text" id="nome" placeholder="Nome do Funcionario">
+                <input type="text" id="cargo" placeholder="Cargo">
+                <input type="number" id="salario" placeholder="Salário    ">
+                <input type="number" id="cpf" placeholder="CPF">
+            </div>
+            <div class="modal-content-footer">
+                <button onclick="editarFuncionario()" class="btn confirm btnEditCad">Editar</button>
+                <button class="btn cancel">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

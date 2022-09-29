@@ -3,6 +3,8 @@ const linhamodelo = document.querySelector(".linhamodelo")
 const modalExcluir = document.querySelector(".excluir")
 const modalEditar = document.querySelector(".editar")
 
+const btCadedit = document.querySelector(".btnEditCad")
+
 const inputCodigo = document.querySelector("#codigo")
 const inputNome = document.querySelector("#nome")
 const inputQuantidade = document.querySelector("#quantidade")
@@ -28,6 +30,8 @@ fetch("http://localhost:5000/produtos")
 
         linha.querySelector("#edita").addEventListener("click", () => {
             modalEditar.classList.remove("model")
+            btCadedit.innerHTML = "Editar"
+            btCadedit.onclick = () => { editarProduto() }
             inputCodigo.value = produto.cod
             inputNome.value = produto.nome
             inputQuantidade.value = produto.qntd
@@ -44,6 +48,16 @@ function fecharModalExcluir() {
 
 function fecharModalEditar() {
     modalEditar.classList.add("model")
+}
+
+function abrirModalCadastro() {
+    btCadedit.innerHTML = "Cadastrar"
+    btCadedit.onclick = () => { cadastrarProduto()}
+    inputCodigo.value = ""
+    inputNome.value = ""
+    inputValor.value = ""
+    inputQuantidade.value = ""
+    modalEditar.classList.remove("model")
 }
 
 function editarProduto() {
@@ -70,4 +84,52 @@ function editarProduto() {
             alert("Falha ao salvar alterações")
         }
     })  
+}
+
+function excluirProduto(){
+    let data ={
+        "cod":document.querySelector("#cod").innerHTML
+    }
+    fetch("http://localhost:5000/produto", {
+        "method":"DELETE",
+        "headers":{
+            "Content-Type":"application/json"
+        },
+        "body":JSON.stringify(data)
+    })
+    .then(res => {return res.json()})
+    .then(resp => {
+        if(resp !== undefined){
+            alert("Produto excluido com sucesso !")
+            window.location.reload()
+        } else {
+            alert("Não foi possivél excluir o produto !")
+        }
+    })
+}
+
+function cadastrarProduto() {
+    let produto = {
+        "cod":inputCodigo.value,
+        "nome":inputNome.value,
+        "qntd":inputQuantidade.value,
+        "valor":inputValor.value
+    }
+
+    fetch("http://localhost:5000/produtos", {
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "body": JSON.stringify(produto)
+    })
+    .then(res => { return res.json() })
+    .then(resp => {
+        if (resp.cod !== undefined) {
+            alert("cadastreu")
+            window.location.reload()
+        } else {
+            alert("nao cadastriu")
+        }
+    })
 }
