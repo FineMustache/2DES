@@ -40,7 +40,7 @@ export default function Login({ navigation }) {
             />
             <Text style={{
                 display: 'flex',
-                backgroundColor: '#ff695e',
+                backgroundColor: isActive ? '#ff695e' : null,
                 color: "#550000",
                 borderRadius: 5,
                 width: "100%",
