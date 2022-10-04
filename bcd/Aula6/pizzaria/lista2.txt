@@ -1,0 +1,41 @@
+1-
+    select * from itens_pedido where pedido_id = (select pedido_id from pedidos where cliente_id = (select Cliente_id from clientes where nome = 'Cesar Augusto Pascali Rago') order by pedido_id desc limit 1);
+    select sum(valor) as "Soma dos Valores" from itens_pedido where pedido_id = (select pedido_id from pedidos where cliente_id = (select Cliente_id from clientes where nome = 'Cesar Augusto Pascali Rago') order by pedido_id desc limit 1);
+    
+2-
+    select sum(quantidade) as "Qtde de Pizzas" from itens_pedido where pedido_id = (select pedido_id from pedidos where cliente_id = (select Cliente_id from clientes where nome = 'Cesar Augusto Pascali Rago') order by pedido_id desc limit 1);
+    select count(DISTINCT pizza_id) as "Sabores Diferentes" from itens_pedido where pedido_id = (select pedido_id from pedidos where cliente_id = (select Cliente_id from clientes where nome = 'Cesar Augusto Pascali Rago') order by pedido_id desc limit 1);
+
+3-
+    CREATE VIEW vw_itens
+    AS
+        -- body of the view
+        SELECT i.pedido_id, i.pizza_id, i.quantidade, i.valor, p.nome
+        FROM itens_pedido i
+        INNER JOIN pizzas p
+        ON i.pizza_id = p.pizza_id ORDER BY i.pedido_id;
+
+4-
+    CREATE VIEW vw_pedidos
+    AS
+        -- body of the view
+        SELECT i.pedido_id, pe.cliente_id, pe.data, pe.hora, i.pizza_id, i.quantidade, i.valor, p.nome, p.valor as "Valor da Pizza", (p.valor * i.quantidade) as "Subtotal", pe.valor as "Total"
+        FROM itens_pedido i
+        INNER JOIN pizzas p
+        ON i.pizza_id = p.pizza_id
+        INNER JOIN pedidos pe
+        ON i.pedido_id = pe.pedido_id ORDER BY i.pedido_id;
+
+5- 
+    DROP VIEW IF EXISTS vw_pedidos;
+    CREATE VIEW vw_pedidos
+    AS
+        -- body of the view
+        SELECT i.pedido_id, pe.cliente_id, c.nome as "Nome Cliente", pe.data, pe.hora, i.pizza_id, i.quantidade, i.valor, p.nome, p.valor as "Valor da Pizza", (p.valor * i.quantidade) as "Subtotal", pe.valor as "Total"
+        FROM itens_pedido i
+        INNER JOIN pizzas p
+        ON i.pizza_id = p.pizza_id
+        INNER JOIN pedidos pe
+        ON i.pedido_id = pe.pedido_id
+        INNER JOIN clientes c
+        ON c.Cliente_id = pe.cliente_id ORDER BY i.pedido_id DESC;

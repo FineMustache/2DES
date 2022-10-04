@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Patrimonios</title>
+</head>
+<body onload="carregar()">
+    <header>
+        <nav>
+            <div class="cadastro">
+                <span>Cadastro de Patrimônios</span>
+                <span onclick="toggleModal()">Cadastrar</span>
+            </div>
+        </nav>
+    </header>
+    <div class="page">
+        <div class="item escondido">
+            <div class="info">
+                <span onclick="deleteItem(this.id)" class="delete">×</span>
+                <span>NI: <span id="sni"></span></span>
+                <span>Data de Aquisição: <span id="sda"></span></span>
+                <span>Denominação: <span id="sdeno"></span></span>
+                <span>Valor: <span id="svl"></span></span>
+            </div>
+            <img id="itImg" src="./assets/default.png" alt="">
+        </div>
+    </div>
+    <div class="modal escondido">
+        <div class="modal-container">
+            <span class="close" onclick="toggleModal()">x</span>
+            <div class="form-control">
+                <label for="ni">NI</label>
+                <input type="number" name="ni" id="ni">
+            </div>
+            <div class="form-control">
+                <label for="aq">Data de Aq.</label>
+                <input type="datetime-local" name="aq" id="aq">
+            </div>
+            <div class="form-control">
+                <label for="deno">Denominação</label>
+                <input type="text" name="deno" id="deno">
+            </div>
+            <div class="form-control">
+                <label for="vl">Valor</label>
+                <input type="number" step="any" name="vl" id="vl">
+            </div>
+            <span onclick="cadastrar()">Cadastrar</span>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

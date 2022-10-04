@@ -1,0 +1,142 @@
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    margin: 0;
+    height: 100vh;
+    background-color: #dedede;
+}
+
+.page{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10vh 20vw;
+    gap: 20px;
+}
+
+.cadastro{
+    height: 8vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(27, 27, 27);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    color: #fff;
+    z-index: 3;
+}
+
+.cadastro > span:first-child{
+    font-size: 14pt;
+}
+
+.cadastro > span:last-child{
+    font-size: 16pt;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.cadastro > span:last-child:hover{
+    background-color: white;
+    color: black;
+}
+
+.item{
+    display: flex;
+    height: 15vh;
+    width: 70%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 5px 5px 0 rgb(180, 180, 180);
+    border-radius: 15px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.delete{
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    font-size: 16pt;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.item>img{
+    height: 100px;
+    width: 100px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 70%;
+    font-weight: bold;
+}
+
+.modal{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.modal-container{
+    position: relative;
+    padding: 50px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-control{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-control>input{
+    width: 60%;
+}
+
+.modal-container>span{
+    font-size: 16pt;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.modal-container>span:hover{
+    background-color: black;
+    color: white;
+}
+
+.escondido{
+    display: none!important;
+}
+
+.close{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    padding: 4px 8px!important;
+}
