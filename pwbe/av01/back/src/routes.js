@@ -10,6 +10,7 @@ router.post("/solicitacoes/produtos", Prod.criarProduto);
 
 router.post("/solicitacoes/depto", Depto.criarDep);
 router.delete("/solicitacoes/depto", Depto.excluirDep);
+router.get("/solicitacoes/depto", Depto.listarDeptos);
 
 router.post("/solicitacoes/solicitacoes", Sol.criarSol);
 router.get("/solicitacoes/solicitacoes", Sol.listarSols);

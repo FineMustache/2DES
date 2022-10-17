@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Depto</title>
+</head>
+<body onload="carregar()">
+    <header>
+        <nav class="nav">
+            <span class="back" onclick="window.history.back()">◄</span>
+            <span>Depto</span>
+        </nav>
+    </header>
+    <div class="page pageDepto">
+        <div class="tableCont">
+            <table class="tableDepto">
+                <thead>
+                    <tr>
+                        <th>Código Depto.</th>
+                        <th>Nome Depto.</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="modelo">
+                        <td id="codDepto">2000</td>
+                        <td id="nomeDepto">Contabilidade</td>
+                        <td id="excDepto" onclick="toggleModal((this.parentNode.id), (this.parentNode.querySelector('#nomeDepto').innerHTML))"><img src="./assets/trashcan.png" alt=""></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="modal escondido">
+        <div class="modal-cont">
+            <span onclick="toggleModal(0, '')" class="fechar">×</span>
+            <p>Tem certeza que deseja excluir o departamento <span id="nomeDeptoMod"></span>?</p>
+            <button value="" class="btn" onclick="excluir(this.value)">Sim</button>
+        </div>
+    </div>
+</body>
+<script src="./scriptDepto.js"></script>
+</html>

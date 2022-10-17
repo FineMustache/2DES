@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Solicitações</title>
+</head>
+<body onload="carregar()">
+    <header>
+        <nav class="nav">
+            <span class="back" onclick="window.history.back()">◄</span>
+            <span>Solicitações</span>
+        </nav>
+    </header>
+    <div class="page pageSol">
+        <span class="cadastrar" onclick="toggleModal()">Cadastrar</span>
+        <div class="tableCont">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código Sol.</th>
+                        <th>Data Sol.</th>
+                        <th>Nome Depto.</th>
+                        <th>Nome Func.</th>
+                        <th>Nome Prod.</th>
+                        <th>Qtde</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="modelo">
+                        <td id="codSol">2000</td>
+                        <td id="dataSol">Contabilidade</td>
+                        <td id="nomeDepto">Contabilidade</td>
+                        <td id="nomeFunc">Contabilidade</td>
+                        <td id="nomeProd">Contabilidade</td>
+                        <td id="qtde">Contabilidade</td>
+                        <td id="valor">Contabilidade</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="modal escondido">
+        <div class="modal-cont">
+            <span onclick="toggleModal(0)" class="fechar">×</span>
+            <div class="form-sol">
+                <div class="form-control">
+                    <label for="numSol">Num. Sol.</label>
+                    <input type="number" name="numSol" id="numSolInp">
+                </div>
+                <div class="form-control">
+                    <label for="depto">Depto.</label>
+                    <select name="depto" id="selDepto">
+                        
+                    </select>
+                </div>
+                <div class="form-control">
+                    <label for="func">Func.</label>
+                    <input type="text" name="func" id="inpFunc">
+                </div>
+                <div class="form-control">
+                    <label for="prod">Prod.</label>
+                    <select name="prod" id="selProd">
+                        
+                    </select>
+                </div>
+            </div>
+            
+            <button class="btn" onclick="cadastrar()">Confirmar</button>
+        </div>
+    </div>
+</body>
+<script src="./scriptSol.js"></script>
+</html>

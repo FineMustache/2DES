@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+
+html,
+body {
+    margin: 0;
+    font-family: "Questrial", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.nav {
+    height: 8vh;
+    background-color: rgb(22, 22, 22);
+    color: white;
+    font-size: 20pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.pageProd{
+    flex-direction: column;
+    justify-content: center!important;
+    align-items: flex-start!important;
+    gap: 10px;
+}
+
+.pageSol{
+    flex-direction: column;
+    justify-content: center!important;
+    align-items: flex-start!important;
+    gap: 10px;
+}
+
+.page {
+    height: 100vh;
+    background-color: rgb(25, 129, 129);
+    display: flex;
+    align-items: center;
+    padding: 0 20vw;
+    justify-content: space-evenly;
+}
+
+.card .image img {
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(92deg) brightness(116%) contrast(103%);
+}
+
+.card {
+    width: 30%;
+    height: 40%;
+    background-color: white;
+    border-radius: 20px 20px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.image {
+    width: 100%;
+    height: 80%;
+    background-color: rgb(37, 155, 155);
+    border-radius: 15px 15px 0 0;
+}
+
+.imageIn {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px 15px 0 0;
+    opacity: 0.5;
+}
+
+.imageInDepto {
+    background-image: url("./assets/depto.png");
+}
+
+.imageInProd {
+    background-image: url("./assets/prod.png");
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: 80px 50px;
+}
+
+.imageInSol {
+    background-image: url("./assets/sol.png");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: 95px 75px;
+}
+
+.card-text {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    font-size: 17pt;
+    padding: 20px;
+}
+
+.back{
+    position: absolute;
+    left: 20px;
+    cursor: pointer;
+}
+
+.tableCont {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+table {
+    height: 100%;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table td,
+table th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 10px;
+}
+
+table tr:first-child th {
+    border-top: 0;
+}
+
+table tr:last-child td {
+    border-bottom: 0;
+}
+
+table tr td:first-child,
+table tr th:first-child {
+    border-left: 0;
+}
+
+table tr td:last-child,
+table tr th:last-child {
+    border-right: 0;
+}
+
+.tableDepto tr td:last-child{
+    background-color: rgb(168, 0, 0);
+    width: 50px;
+    cursor: pointer;
+}
+
+#excDepto>img {
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(92deg) brightness(116%) contrast(103%);
+    height: 30px;
+    width: 30px;
+}
+
+.modelo{
+    display: none!important;
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.modal-cont{
+    background-color: white;
+    padding: 40px;
+    position: relative;
+    font-size: 18pt;
+}
+
+.fechar{
+    font-size: 18pt;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.btn{
+    border: 1px solid rgb(25, 129, 129);
+    color: rgb(25, 129, 129);
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: rgb(25, 129, 129);
+    color: white;
+}
+
+.escondido{
+    display: none!important;
+}
+
+.cadastrar{
+    background-color: white;
+    padding: 20px;
+    font-size: 14pt;
+    cursor: pointer;
+}
+
+#nomeDeptoMod{
+    color: rgb(37, 155, 155);
+}
+
+.modal label{
+    font-size: 12pt;
+}
+
+.form-prod{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.form-control{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.form-sol{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}

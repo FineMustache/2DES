@@ -18,14 +18,25 @@ const excluirDep = (req, res) => {
     let string = `delete from Departamentos where Cod_Depto = ${cod}`;
     con.query(string, (err, result) => {
         if (err == null) {
-            res.status(201).send("Sucesso").end();
+            res.status(201).json(result).end();
         } else {
             res.status(400).json(err).end();
         }
     });
 }
 
+const listarDeptos = (req, res) => {
+    let string = "select * from departamentos";
+    con.query(string, (err, result) => {
+        if (err == null) {
+            res.json(result).end();
+        }
+    });
+}
+
+
 module.exports = {
     criarDep,
-    excluirDep
+    excluirDep,
+    listarDeptos
 }
