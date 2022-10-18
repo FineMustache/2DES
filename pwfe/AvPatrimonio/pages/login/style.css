@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+.reg{
+    font-weight: 400;
+}
+
+.med{
+    font-weight: 500;
+}
+
+.bol{
+    font-weight: 700;
+}
+
+html, body{
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.page{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    width: 100%;
+    background-color: #6C117B;
+    color: white;
+    padding: 0 15vw;
+}
+
+.left{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title{
+    font-size: 48px;
+    word-wrap: break-word;
+}
+
+.subtitle{
+    font-size: 24px;
+    margin-top: 40px;
+}
+
+.right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    padding: 60px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    min-width: 70%;
+}
+
+input{
+    border: none;
+    border-bottom: 2px solid #04558A;
+    padding: 10px;
+    font-size: 16px;
+}
+
+::placeholder{
+    color: #04558A;
+    opacity: .8;
+}
+
+input:focus{
+    outline: none;
+}
+
+.btn{
+    font-size: 24px;
+    padding: 12px 0;
+    color: white;
+    border: none;
+    background-color: #04558A;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.escondido{
+    display: none;
+}
+
+.error{
+    color: rgb(95, 0, 0);
+    background-color: rgb(255, 108, 108);
+    padding: 10px;
+    font-size: 14px;
+}

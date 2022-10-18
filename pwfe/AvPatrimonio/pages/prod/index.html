@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Produtos</title>
+</head>
+
+<body class="" onload="carregar()">
+    <header>
+        <nav>
+            <div class="left-nav bol">
+                <a href="../home/index.html">Home</a>
+                <a href="../prod/index.html">Produtos</a>
+            </div>
+            <div class="right-nav bol">
+                <span id="username">User Name</span>
+                <div class="pfp"></div>
+            </div>
+        </nav>
+    </header>
+    <div class="page">
+        <button class="btnCadastrar bol" onclick="toggleModal()">Cadastrar</button>
+        <div class="produtos">
+            <div class="prod modelo">
+                <div class="prodImg" id="prodImg"></div>
+                <span id="prodId">6349c0f20333e09782ec6ad4</span>
+                <span id="prodNi">10001</span>
+                <span id="prodAq">06/10/2009</span>
+                <span id="prodDeno">SERVIDOR ESCOLA MX203 ITAUTEC</span>
+                <span id="prodValor">R$ 22501.08</span>
+
+                <div class="prodRemove" onclick="remover(this.parentNode.id)">×</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal escondido">
+        <div class="modal-container form">
+            <input type="number" placeholder="NI" id="inpNi" required>
+            <input type="text" placeholder="Aquisição" id="inpAq" required>
+            <input type="text" placeholder="Denominação" id="inpDeno" required>
+            <input type="number" placeholder="Valor" id="inpValor" required>
+            <div class="fachada" onclick="document.querySelector('#inpImg').click()"><span>Selecionar Imagem</span></div>
+            <input type="file" id="inpImg" accept="image/png, image/gif, image/jpeg" hidden required>
+            <div class="modal-bot">
+                <button class="btnModCancelar bol" onclick="toggleModal()">Cancelar</button>
+                <button class="btnModCadastrar bol" onclick="cadastrar()">Cadastrar</button>
+            </div>
+        </div>
+        <div class="modal-container sucesso escondido">
+            <img src="../../assets/success.png" width="50px" alt="">
+            <p>Produto Cadastrado com Sucesso!</p>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

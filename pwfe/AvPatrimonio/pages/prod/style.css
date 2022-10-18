@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+.reg{
+    font-weight: 400;
+}
+
+.med{
+    font-weight: 500;
+}
+
+.bol{
+    font-weight: 700;
+}
+
+html, body{
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav{
+    height: 8vh;
+    background-color: #04558A;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+.left-nav{
+    height: 100%;
+    display: flex;
+}
+
+.right-nav{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.left-nav > a{
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.left-nav > a:hover{
+    background-color: #034875;
+}
+
+.page{
+    min-height: 92vh;
+    width: 100%;
+    background-color: #0182B0;
+    color: white;
+    padding: 5vh 10vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.pfp{
+    height: 6.5vh;
+    width: 6.5vh;
+    background-image: url('../../assets/avatar.png');
+    background-size: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+#username{
+    color: white;
+    margin-right: 20px;
+}
+
+.btnCadastrar{
+    font-size: 20px;
+    padding: 15px 25px;
+    border-radius: 7px;
+    border: 3px solid #F8C304;
+    background: none;
+    color: #F8C304;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    max-width: 200px;
+}
+
+.btnCadastrar:hover{
+    background-color: #F8C304;
+    color: #04558A;
+}
+
+.produtos{
+    flex: 1;
+    margin-top: 50px;
+}
+
+.prod{
+    height: 120px;
+    display: flex;
+    align-items: center;
+}
+
+.prodImg{
+    height: 100px;
+    width: 100px;
+    background-image: url("../../assets/microcomputador.png");
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.prod span{
+    display: flex;
+    align-items: center;
+    padding: 0 60px;
+    font-size: 16px;
+}
+
+.prodRemove{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    font-size: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#prodId{
+    width: 25%;
+}
+
+#prodNi{
+    width: 10%;
+}
+
+#prodAq{
+    width: 15%;
+}
+
+#prodDeno{
+    width: 25%;
+}
+
+#prodValor{
+    width: 15%;
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(52, 7, 99, .8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-container{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 28px 32px;
+    gap: 28px;
+    border-radius: 10px;
+}
+
+input{
+    border: none;
+    border-bottom: 2px solid #6C117B;
+    padding: 20px;
+    font-size: 16px;
+    width: 400px;
+}
+
+::placeholder{
+    color: #000;
+    opacity: .5;
+}
+
+input:focus{
+    outline: none;
+}
+
+.modal-bot{
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-bot > button{
+    font-size: 24px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    border: 3px solid #6C117B;
+    cursor: pointer;
+}
+
+.btnModCancelar{
+    color: #6C117B;
+}
+
+.btnModCadastrar{
+    background-color: #6C117B;
+    color: white;  
+}
+
+.locked{
+    overflow-y: hidden;
+}
+
+.modelo{
+    display: none;
+}
+
+.escondido{
+    display: none;
+}
+
+.fachada{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ccc;
+    padding: 50px;
+    user-select: none;
+    border: 3px solid #ccc;
+    cursor: pointer;
+}
+
+.fachada:hover{
+    border: 3px dashed #6C117B;
+}
+
+.sucesso{
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
