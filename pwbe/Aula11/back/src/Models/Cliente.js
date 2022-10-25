@@ -12,7 +12,7 @@ const toReadAll = ()=>{
 
 const toAscii = (dados)=>{
     dados.forEach(d => {
-        if(d.foto != null) d.foto = d.foto.toString('ascii');
+        if(d.img != null) d.img = d.img.toString('ascii');
     });
     return dados;
 }

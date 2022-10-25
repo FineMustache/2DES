@@ -10,18 +10,18 @@
 <body>
     <div class="page">
         <div class="card">
-            <div class="form">
+            <form method="post" action="http://localhost:5000/blobs/clientes" enctype="multipart/form-data" class="form">
                 <span class="form-title">Cadastro</span>
                 <div class="form-control">
                     <label for="nome">Nome</label>
-                    <input type="text" name="nome">
+                    <input type="text" name="nome" id="nome">
                 </div>
                 <div class="drop-zone" id="dz" onclick="document.querySelector('#inpFile').click()" ondrop="dropHandler(event);" ondragenter="dragEnterHandler(event);" ondragleave="dragEnterHandler(event)" ondragover="dragOverHandler(event)">
                     <span style="text-align: center;">Solte o Grosso<br><span style="opacity: .5">(ou clique)</span></span>
                 </div>
-                <input type="file" id="inpFile" onchange="inpChange(this)" hidden>
-                <button class="btn" onclick="console.log(document.querySelector('#inpFile').files)">Cadastrar</button>
-            </div>
+                <input type="file" id="inpFile" onchange="inpChange(this)" hidden name="foto">
+                <button class="btn" type="submit">Cadastrar</button>
+            </form>
         </div>
     </div>
 </body>
