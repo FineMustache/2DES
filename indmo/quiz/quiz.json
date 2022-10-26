@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+      "perg": "Teco Teco do Beetlejuice do Oldrikandalahai da Toscana?",
+      "resp" :[
+          {
+              "text": "Biruteco do Biro Biro do Marisco de Mamão Papaya",
+              "right": true
+          },
+          {
+              "text": "??????????",
+              "right": false
+          },
+          {
+              "text": "Ligue 188 CVV",
+              "right": false
+          },
+          {
+              "text": "Meio memes",
+              "right": false
+          }
+      ]
+    },
+    {
+        "id": 2,
+      "perg": "Sal Grosso da Manjuba de Bilu Tetéia da Calça Saruel?",
+      "resp" :[
+          {
+              "text": "Biruteco do Biro Biro do Marisco de Mamão Papaya",
+              "right": true
+          },
+          {
+              "text": "??????????",
+              "right": false
+          },
+          {
+              "text": "Ligue 188 CVV",
+              "right": false
+          },
+          {
+              "text": "Meio memes",
+              "right": false
+          }
+      ]
+    },
+    {
+        "id": 3,
+      "perg": "Beyblade do Bakugan do Ash Ketchum da cidade de Pallet?",
+      "resp" :[
+          {
+              "text": "Biruteco do Biro Biro do Marisco de Mamão Papaya",
+              "right": true
+          },
+          {
+              "text": "??????????",
+              "right": false
+          },
+          {
+              "text": "Ligue 188 CVV",
+              "right": false
+          },
+          {
+              "text": "Meio memes",
+              "right": false
+          }
+      ]
+    }
+  ]
