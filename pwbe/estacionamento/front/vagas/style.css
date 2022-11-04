@@ -1,0 +1,166 @@
+*{
+    box-sizing: border-box;
+}
+
+body, html{
+    height: 100vh;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav{
+    background-color: rgb(236, 173, 0);
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16pt;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+nav > a{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    color: black;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+nav > a:hover{
+    background-color: rgb(201, 147, 0);
+}
+
+.page{
+    height: 100%;
+    padding: 8vh 25% 0 25%;
+    background-color: rgb(211, 211, 211);
+    display: flex;
+    flex-direction: column;
+}
+
+.page-title{
+    font-size: 20pt;
+    margin-bottom: 25px;
+}
+
+.card{
+    background-color: white;
+    width: 100%;
+    padding: 25px;
+}
+
+.parking{
+    width: 100%;
+    display: flex;
+}
+
+.spot-column{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.spot:first-child{
+    border-top: 1px solid black;
+}
+
+.spot{
+    padding: 45px;
+    border-bottom: 1px solid black;
+    transition: .1s;
+    position: relative;
+}
+
+.spot-column:nth-child(2) .spot{
+    border-right: 1px solid black;
+    display: flex;
+    justify-content: end;
+}
+
+.spot-column:nth-child(3){
+    margin-right: 10%;
+}
+
+.spot-column:nth-child(4) .spot{
+    border-right: 1px solid black;
+    display: flex;
+    justify-content: end;
+}
+
+.spot-column:first-child .spot{
+    border-left: 1px solid black;
+}
+
+.spot-column:first-child{
+    margin-right: 10%;
+}
+
+.spot:hover{
+    background-color: rgb(236, 173, 0);
+    cursor: pointer;
+}
+
+.selected{
+    background-color: rgb(201, 147, 0);
+}
+
+.spot > img{
+    position: absolute;
+    height: 120%;
+    top: -10px;
+    rotate: -90deg;
+    right: -40px;
+    opacity: 0;
+}
+
+.spot-column:nth-child(2) .spot > img{
+    rotate: 90deg;
+    left: -40px;
+}
+
+.spot-column:nth-child(4) .spot > img{
+    rotate: 90deg;
+    left: -40px;
+}
+
+.spot-column:nth-child(2) .selected > img{
+    animation-name: car-even;
+}
+
+.spot-column:nth-child(4) .selected > img{
+    animation-name: car-even;
+}
+
+.selected > img{
+    animation-name: car-odd;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    z-index: 0;
+}
+
+.spot > span {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes car-odd {
+    100%{
+        opacity: 1;
+        right: 50px;
+    }
+}
+
+@keyframes car-even {
+    100%{
+        opacity: 1;
+        left: 50px;
+    }
+}

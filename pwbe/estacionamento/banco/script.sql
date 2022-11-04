@@ -1,5 +1,5 @@
 drop database if exists estacionamento;
-create database estacionamento DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;;
+create database estacionamento charset=UTF8 collate utf8_general_ci;
 use estacionamento;
 create table clientes(
     id integer not null primary key auto_increment,
@@ -31,7 +31,18 @@ CREATE TABLE entradas(
     FOREIGN KEY (id_cliente) REFERENCES clientes(id),
     FOREIGN KEY (placa) REFERENCES veiculos(placa),
     FOREIGN KEY (id_vaga) REFERENCES vagas(id)
-); 
+);
+
+DELIMITER $
+
+CREATE TRIGGER alterarVaga after insert
+ON entradas
+FOR EACH ROW
+BEGIN
+    UPDATE vagas set disponivel = !disponivel where id = NEW.id_vaga;
+END $
+
+DELIMITER ;
 
 CREATE VIEW vw_entradas as
 SELECT c.nome as nome_cli, v.placa as placa, v.modelo as modelo, v.cor as cor, v.tipo as tipo, vg.id as vaga, e.data_entrada as data_entrada, e.data_saida as data_saida, e.valor as valor
@@ -42,6 +53,7 @@ INNER JOIN veiculos v
 on e.placa = v.placa
 INNER JOIN vagas vg
 on e.id_vaga = vg.id;
+
 
 INSERT INTO clientes
 VALUES
@@ -63,27 +75,33 @@ INSERT INTO vagas
 VALUES
 ('A1', false),
 ('A2', false),
-('A3', true),
+('A3', false),
 ('A4', false),
 ('A5', false),
 ('A6', false),
-('A7', true),
-('A8', false),
-('A9', false),
 ('B1', false),
 ('B2', false),
-('B3', true),
+('B3', false),
 ('B4', false),
 ('B5', false),
 ('B6', false),
-('B7', false),
-('B8', false),
-('B9', false);
+('C1', false),
+('C2', false),
+('C3', false),
+('C4', false),
+('C5', false),
+('C6', false),
+('D1', false),
+('D2', false),
+('D3', false),
+('D4', false),
+('D5', false),
+('D6', false);
 
 INSERT INTO entradas
 VALUES
-(DEFAULT, 5, 'AJP4T45', 'A7', '2022-09-26 18:02:00', '2022-09-27 06:02:00', 180),
+(DEFAULT, 5, 'AJP4T45', 'A6', '2022-09-26 18:02:00', '2022-09-27 06:02:00', 180),
 (DEFAULT, 2, 'POT8V25', 'B3', '2022-09-26 23:35:00', NULL, NULL),
-(DEFAULT, 1, 'LKC7A43', 'A7', '2022-09-27 07:10:00', NULL, NULL),
+(DEFAULT, 1, 'LKC7A43', 'A6', '2022-09-27 07:10:00', NULL, NULL),
 (DEFAULT, 4, 'EBD5V98', 'A2', '2022-09-27 05:25:00', '2022-09-27 06:25:00', 15),
 (DEFAULT, 3, 'MOZ9F28', 'A3', '2022-09-27 02:00:00', NULL, NULL);
