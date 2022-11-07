@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
+:root{
+    --dark-gray: hsl(0, 0%, 48%);
+    --cyan: hsl(176, 50%, 47%);
+    --dark-cyan: hsl(176, 72%, 28%);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    margin: 0;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 16px;
+}
+
+.bg{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+}
+
+.header-container{
+    position: absolute;
+    width: 100%;
+    padding: 0 12%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+    background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,0));
+}
+
+nav{
+    display: flex;
+    height: 100px;
+    align-items: center;
+    gap: 30px;
+    z-index: 2;
+}
+
+.header-container>img{
+    height: 50%;
+    z-index: 2;
+}
+
+nav>a{
+    text-decoration: none;
+    color: white;
+}
+
+.main{
+    margin-top: 300px;
+    border-radius: 10px;
+    position: relative;
+    padding: 30px 50px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: rgb(240, 240, 240);
+    z-index: 0;
+    flex-direction: column;
+}
+
+.main > img{
+    position: absolute;
+    top: -28px;
+    left: calc(50% - 28px);
+}
+
+.title{
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.main-bottom{
+    display: flex;
+    width: 100%;
+    margin-top: 25px;
+    justify-content: space-between;
+}
+
+.btn{
+    color: white;
+    background-color: var(--cyan);
+    border: none;
+    padding: 20px 40px;
+    border-radius: 100px;
+    font-weight: 700;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 16px;
+}
+
+.bookmark{
+    height: 56px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    font-weight: 700;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 16px;
+    color: var(--dark-gray);
+    border: none;
+    background-color: rgb(240, 240, 240);
+    padding-right: 30px;
+}
+
+.bookmark>img{
+    margin-right: 15px;
+}
+
+.btn:first-child:hover{
+    background-color: var(--dark-cyan);
+}
+
+.desc{
+    color: var(--dark-gray);
+}
+
+.card{
+    width: 50%;
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 30px 50px;
+}
+
+.card-numbers{
+    display: flex;
+    flex-direction: column;
+}
+
+.numbers{
+    display: flex;
+    justify-content: space-between;
+}
+
+.num-i{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.num-i > span:first-child{
+    font-size: xx-large;
+    font-weight: 700;
+}
+
+.num-i > span:last-child{
+    color: var(--dark-gray);
+}
+
+.progress{
+    width: 100%;
+    height: 15px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 50px;
+    margin-top: 40px;
+    position: relative;
+}
+
+.progress-bar{
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    border-radius: 50px;
+    background-color: var(--cyan);
+    transition: .5s;
+}
+
+.about-title{
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.card-about > p{
+    color: var(--dark-gray);
+    line-height: 1.5rem;
+}
+
+.card-about > p:first-child{
+    color: black;
+}

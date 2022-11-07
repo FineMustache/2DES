@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Crowdfunding product page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body onload="carregar()">
+  <header>
+    <div class="header-container">
+      <img src="./images/logo.svg" alt="">
+      <nav>
+        <a href="#">About</a>
+        <a href="#">Discover</a>
+        <a href="#">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <div class="page">
+    <img src="./images/image-hero-desktop.jpg" alt="" class="bg">
+    <div class="card main">
+      <img src="./images/logo-mastercraft.svg" alt="" class="company-logo">
+      <p class="title">Mastercraft Bamboo Monitor Riser</p>
+      <p class="desc">A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
+      <div class="main-bottom">
+        <button class="btn">Back this project</button>
+        <button class="bookmark"><img src="./images/icon-bookmark.svg" alt="">Bookmark</button>
+      </div>
+    </div>
+    <div class="card card-numbers">
+      <div class="numbers">
+        <div class="num-i">
+          <span>$<span id="curmoney">89,914</span></span>
+          <span>of $<span id="goalmoney">100,000</span> backed</span>
+        </div>
+        <div class="num-i">
+          <span id="backers">5,007</span>
+          <span>total backers</span>
+        </div>
+        <div class="num-i">
+          <span id="daysl">56</span>
+          <span>days left</span>
+        </div>
+      </div>
+      <div class="progress">
+        <div class="progress-bar"></div>
+      </div>
+    </div>
+    <div class="card card-about">
+      <p class="about-title">About this project</p>
+      <p>The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen 
+        to a more comfortable viewing height. Placing your monitor at eye level has the potential to improve 
+        your posture and make you more comfortable while at work, helping you stay focused on the task at hand.</p>
+      <p>Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer 
+        to allow notepads, pens, and USB sticks to be stored under the stand.</p>
+    </div>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
