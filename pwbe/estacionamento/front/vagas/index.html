@@ -127,6 +127,41 @@
             </div>
         </div>
     </div>
+    <div class='modal escondido'>
+        <div class='modal-container'>
+            <div class="modal-top">
+            </div>
+            <span class='close' onclick='toggleModal()'>×</span>
+            <div class="form escondido">
+                <div class="form-control">
+                    <label for="cli">Cliente</label>
+                    <select name="cli" id="cli">
+                    </select>
+                </div>
+                <div class="form-control">
+                    <label for="placa">Placa</label>
+                    <select name="placa" id="placa">
+    
+                    </select>
+                </div>
+                <p>Vaga: <span id="vagaModal"></span></p>
+                <button onclick="cadastrar()" class="btn">Cadastrar Entrada</button>
+            </div>
+            <div class="loading">
+                <div class="circle">
+                    <div class="loading-circle">
+                        <div class="inner-circle"></div>
+                    </div>
+                    <div class="check-long"></div>
+                    <div class="check-small"></div>
+                    <div class="cover-2"></div>
+                    <div class="cover-1"></div>
+                    
+                    </div>
+                </div>
+        </div>
+        
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

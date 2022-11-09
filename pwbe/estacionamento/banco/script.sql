@@ -42,6 +42,14 @@ BEGIN
     UPDATE vagas set disponivel = !disponivel where id = NEW.id_vaga;
 END $
 
+CREATE TRIGGER alterarVagaUpdt after update
+ON entradas
+FOR EACH ROW
+BEGIN
+    UPDATE vagas set disponivel = !disponivel where id = NEW.id_vaga;
+END $
+
+
 DELIMITER ;
 
 CREATE VIEW vw_entradas as
