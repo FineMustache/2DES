@@ -13,6 +13,7 @@ router.get("/estacionamento/veiculos", VeiculosController.listarVeiculos);
 router.get("/estacionamento/veiculos/:placa", VeiculosController.listarVeiculo);
 router.get("/estacionamento/vagas", VagasController.listarVagas);
 router.get("/estacionamento/entradas", EntradasController.listarEntradas);
+router.get("/estacionamento/entrada/:id_vaga", EntradasController.listarEntrada);
 
 router.post("/estacionamento/entradas", EntradasController.cadastrarEntrada);
 

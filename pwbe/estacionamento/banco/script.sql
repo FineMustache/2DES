@@ -53,7 +53,7 @@ END $
 DELIMITER ;
 
 CREATE VIEW vw_entradas as
-SELECT c.nome as nome_cli, v.placa as placa, v.modelo as modelo, v.cor as cor, v.tipo as tipo, vg.id as vaga, e.data_entrada as data_entrada, e.data_saida as data_saida, e.valor as valor
+SELECT e.id_entrada as id, c.nome as nome_cli, v.placa as placa, v.modelo as modelo, v.cor as cor, v.tipo as tipo, vg.id as vaga, e.data_entrada as data_entrada, e.data_saida as data_saida, e.valor as valor
 FROM entradas e
 INNER JOIN clientes c
 ON e.id_cliente = c.id
@@ -81,35 +81,35 @@ VALUES
 
 INSERT INTO vagas
 VALUES
-('A1', false),
-('A2', false),
-('A3', false),
-('A4', false),
-('A5', false),
-('A6', false),
-('B1', false),
-('B2', false),
-('B3', false),
-('B4', false),
-('B5', false),
-('B6', false),
-('C1', false),
-('C2', false),
-('C3', false),
-('C4', false),
-('C5', false),
-('C6', false),
-('D1', false),
-('D2', false),
-('D3', false),
-('D4', false),
-('D5', false),
-('D6', false);
+('A1', true),
+('A2', true),
+('A3', true),
+('A4', true),
+('A5', true),
+('A6', true),
+('B1', true),
+('B2', true),
+('B3', true),
+('B4', true),
+('B5', true),
+('B6', true),
+('C1', true),
+('C2', true),
+('C3', true),
+('C4', true),
+('C5', true),
+('C6', true),
+('D1', true),
+('D2', true),
+('D3', true),
+('D4', true),
+('D5', true),
+('D6', true);
 
 INSERT INTO entradas
 VALUES
-(DEFAULT, 5, 'AJP4T45', 'A6', '2022-09-26 18:02:00', '2022-09-27 06:02:00', 180),
-(DEFAULT, 2, 'POT8V25', 'B3', '2022-09-26 23:35:00', NULL, NULL),
-(DEFAULT, 1, 'LKC7A43', 'A6', '2022-09-27 07:10:00', NULL, NULL),
-(DEFAULT, 4, 'EBD5V98', 'A2', '2022-09-27 05:25:00', '2022-09-27 06:25:00', 15),
-(DEFAULT, 3, 'MOZ9F28', 'A3', '2022-09-27 02:00:00', NULL, NULL);
+(DEFAULT, 5, 'AJP4T45', 'A6', '2022-11-09 18:02:00', '2022-11-10 06:02:00', 180),
+(DEFAULT, 2, 'POT8V25', 'B3', '2022-11-10 15:35:00', NULL, NULL),
+(DEFAULT, 1, 'LKC7A43', 'A6', '2022-11-10 11:10:00', NULL, NULL),
+(DEFAULT, 4, 'EBD5V98', 'A2', '2022-11-09 05:25:00', '2022-11-09 06:25:00', 15),
+(DEFAULT, 3, 'MOZ9F28', 'A3', '2022-11-10 17:00:00', NULL, NULL);

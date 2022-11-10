@@ -15,7 +15,7 @@ function carregar() {
 
         v.addEventListener('click', () => {
             
-            toggleModal(v.querySelector("span").innerHTML)
+            toggleModal(v.id)
         })
     })
 
@@ -92,6 +92,7 @@ function cadastrar() {
       fetch('http://localhost:5000/estacionamento/entradas', options)
         .then(response => response.json())
         .then(response => {
+            console.log(response)
             if (response.placa !== null) {
                 document.querySelector(".cover-1").classList.add("animate-small")
                 document.querySelector(".cover-2").classList.add("animate-long")
@@ -100,7 +101,7 @@ function cadastrar() {
                 document.querySelector(".inner-circle").classList.add("fade-inner")
 
                 setTimeout(()=>{
-                    toggleModal(null)
+                    toggleModal(vaga)
                     document.querySelector(`#${vaga}`).classList.toggle("selected")
                     document.querySelector('.form').classList.toggle('escondido')
                     document.querySelector('.loading').classList.toggle('escondido')
@@ -128,5 +129,66 @@ function cadastrar() {
 }
 
 function fecharEntrada() {
-    
+    let vaga = document.querySelector("#vagaModal2").innerHTML
+    document.querySelector('.remove').classList.toggle('escondido')
+    document.querySelector('.loading').classList.toggle('escondido')
+      fetch(`http://localhost:5000/estacionamento/entrada/${vaga}`)
+        .then(response => response.json())
+        .then(response => {
+            console.table(response)
+            let curdate = new Date()
+            let indate = new Date(response[0].data_entrada)
+            let horas = Math.abs(curdate - indate) / 36e5
+            let valor = Math.ceil((horas * 15)/5)*5
+
+            const options = {
+                method: 'PUT',
+                headers: {'Content-Type': 'application/json'},
+                body: `{"id":"${response[0].id}","valor":${valor}}`
+              };
+              
+              fetch('http://localhost:5000/estacionamento/entradas', options)
+                .then(response => response.json())
+                .then(response => {
+                    console.log(response)
+                    if (response.id !== null) {
+                        document.querySelector(".cover-1").classList.add("animate-small")
+                        document.querySelector(".cover-2").classList.add("animate-long")
+                        document.querySelector(".loading-circle").classList.add("stop")
+                        document.querySelector(".inner-circle").classList.add("round")
+                        document.querySelector(".inner-circle").classList.add("fade-inner")
+        
+                        setTimeout(()=>{
+                            toggleModal(vaga)
+                            document.querySelector(`#${vaga}`).classList.toggle("selected")
+                            document.querySelector('.form').classList.toggle('escondido')
+                            document.querySelector('.loading').classList.add('escondido')
+                            document.querySelector('.remove').classList.add('escondido')
+                            document.querySelector('.errorR').classList.add('escondido')
+                            document.querySelector(".cover-1").classList.remove("animate-small")
+                            document.querySelector(".cover-2").classList.remove("animate-long")
+                            document.querySelector(".loading-circle").classList.remove("stop")
+                            document.querySelector(".inner-circle").classList.remove("round")
+                            document.querySelector(".inner-circle").classList.remove("fade-inner")
+                        }, 2000)
+                    } else {
+                        console.log(response)
+                        document.querySelector('.loading').classList.add('escondido')
+                        document.querySelector('.remove').classList.remove('escondido')
+                        document.querySelector('.errorR').classList.remove('escondido')
+                    }
+                })
+                .catch(err => {
+                    console.log(err)
+                    document.querySelector('.form').classList.toggle('escondido')
+                    document.querySelector('.loading').classList.toggle('escondido')
+                    document.querySelector('.errorR').classList.remove('escondido')
+                });
+        })
+        .catch(err => {
+            console.log(err)
+            document.querySelector('.loading').classList.toggle('escondido')
+            document.querySelector('.remove').classList.toggle('escondido')
+            document.querySelector('.errorR').classList.remove('escondido')
+        });
 }
