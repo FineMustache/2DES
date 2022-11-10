@@ -243,7 +243,17 @@ label{
 }
 
 .escondido{
-    display: none
+    display: none!important
+}
+
+.form{
+    width: 100%;
+}
+
+.error{
+    background-color: rgb(238, 148, 148);
+    color: rgb(112, 20, 20);
+    padding: 10px;
 }
 
 .loading{
@@ -386,4 +396,17 @@ label{
         top: 10px;
         width: 0;
     }
+}
+
+.remove{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    font-size: large;
+}
+
+#vagaModal2{
+    color: rgb(236, 173, 0);
 }

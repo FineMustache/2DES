@@ -31,7 +31,15 @@ function cadastrarEntrada(req, res) {
 };
 
 function editarEntrada(){
+    let query = `UPDATE entradas SET data_saida = CURTIME()`;
 
+    conDB.query(query, (err, result) => {
+        if(err == null) {
+            res.json(req.body).status(200).end();
+        }else {
+            res.json(err).status(400).end();
+        }
+    })
 }
 
 

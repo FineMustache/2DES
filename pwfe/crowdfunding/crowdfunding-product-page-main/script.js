@@ -6,3 +6,8 @@ function carregar() {
 
     document.querySelector('.progress-bar').style.width = percent + '%'
 }
+
+function toggleModal(){
+    document.querySelector('.modal').classList.toggle('escondido')
+    document.body.style.overflow = 'hidden'
+}

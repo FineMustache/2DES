@@ -132,7 +132,7 @@
             <div class="modal-top">
             </div>
             <span class='close' onclick='toggleModal()'>×</span>
-            <div class="form escondido">
+            <div class="form">
                 <div class="form-control">
                     <label for="cli">Cliente</label>
                     <select name="cli" id="cli">
@@ -145,9 +145,10 @@
                     </select>
                 </div>
                 <p>Vaga: <span id="vagaModal"></span></p>
+                <p class="error escondido">Estamos equivocando nos bastidores aqui foi mal :c</p>
                 <button onclick="cadastrar()" class="btn">Cadastrar Entrada</button>
             </div>
-            <div class="loading">
+            <div class="loading escondido">
                 <div class="circle">
                     <div class="loading-circle">
                         <div class="inner-circle"></div>
@@ -157,8 +158,12 @@
                     <div class="cover-2"></div>
                     <div class="cover-1"></div>
                     
-                    </div>
                 </div>
+            </div>
+            <div class="remove escondido">
+                <p>Deseja fechar essa entrada (<span id="vagaModal2"></span>)?</p>
+                <div class="btn">Confirmar</div>
+            </div>
         </div>
         
     </div>

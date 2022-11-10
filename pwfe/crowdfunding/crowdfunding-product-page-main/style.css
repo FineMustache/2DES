@@ -14,6 +14,7 @@ html, body{
     margin: 0;
     font-family: 'Commissioner', sans-serif;
     font-size: 16px;
+    position: relative;
 }
 
 .bg{
@@ -82,6 +83,7 @@ nav>a{
 .title{
     font-size: x-large;
     font-weight: bold;
+    color: black;
 }
 
 .main-bottom{
@@ -134,6 +136,7 @@ nav>a{
     background-color: white;
     margin-bottom: 20px;
     padding: 30px 50px;
+    border-radius: 10px;
 }
 
 .card-numbers{
@@ -150,6 +153,11 @@ nav>a{
     display: flex;
     flex-direction: column;
     width: 30%;
+    border-right: 2px solid rgb(240, 240, 240);
+}
+
+.num-i:last-child{
+    border: none;
 }
 
 .num-i > span:first-child{
@@ -192,4 +200,77 @@ nav>a{
 
 .card-about > p:first-child{
     color: black;
+}
+
+.bold{
+    font-weight: 700;
+}
+
+p{
+    color: var(--dark-gray);
+}
+
+.numleft{
+    font-weight: 700;
+    font-size: 30px;
+    color: black;
+}
+
+.about-i-bot > p{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-i{
+    width: 100%;
+    border: 1px solid rgb(240, 240, 240);
+    
+}
+
+.about-i-top{
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-i-top > span:last-child{
+    color: var(--cyan);
+    font-weight: 500;
+}
+
+.about-i-bot{
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,.5);
+}
+
+.modal-container{
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.escondido{
+    display: none
 }
