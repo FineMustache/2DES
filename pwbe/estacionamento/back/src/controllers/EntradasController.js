@@ -54,10 +54,22 @@ function editarEntrada(req, res){
     })
 }
 
+function excluirEntrada(req, res) {
+    let query = `DELETE FROM entradas WHERE id_entrada = ${req.body.id}`;
+
+    conDB.query(query, (err, result) => {
+        if(err == null) {
+            res.json(req.body).status(200).end();
+        }else {
+            res.json(err).status(400).end();
+        }
+    })
+};
 
 module.exports = {
     listarEntradas,
     cadastrarEntrada,
     editarEntrada,
-    listarEntrada
+    listarEntrada,
+    excluirEntrada
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -12,26 +12,76 @@
 
 <body onLoad="carregar()">
     <header>
-        <a href="../clientes/index.html">Clientes</a>
-        <a href="../vagas/index.html">Vagas</a>
-        <a href="../entradas/index.html">Entradas</a>
-        <a href="../veiculos/index.html">Veiculos</a>
+        <nav>
+            <a href="../clientes/index.html">Clientes</a>
+            <a href="../vagas/index.html">Vagas</a>
+            <a href="../entradas/index.html">Entradas</a>
+            <a href="../veiculos/index.html">Veiculos</a>
+        </nav>
+        
     </header>
 
-    <main>
-        <h2>Clientes</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Telefone</th>
-                    <th>Endereço</th>
-                </tr>
-            </thead>
-            <tbody id="corpo">
-            </tbody>
-        </table>
-    </main>
+    <div class="page">
+        <div class="page-top">
+            <span class="page-title">Clientes</span>
+        <button class="btnAdd" onclick="modalCad()">+</button>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                        <th>Endereço</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="corpo">
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+    <div class='modal escondido'>
+        <div class='modal-container'>
+            <div class="modal-top">
+            </div>
+            <span class='close' onclick='toggleModal()'>×</span>
+            <div class="form">
+                <div class="form-control">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome">
+                </div>
+                <div class="form-control">
+                    <label for="tel">Telefone</label>
+                    <input type="tel" id="tel" onkeypress="telMask(event)">
+                </div>
+                <div class="form-control">
+                    <label for="end">Endereço</label>
+                    <input type="text" id="end">
+                </div>
+                <p class="error escondido">Deu ruim aqui debaixo dos panos tenta dnv daqui a pouco :c</p>
+                <button class="btn" onclick="cadastrar()">Cadastrar</button>
+            </div>
+            <div class="loading escondido">
+                <div class="circle">
+                    <div class="loading-circle">
+                        <div class="inner-circle"></div>
+                    </div>
+                    <div class="check-long"></div>
+                    <div class="check-small"></div>
+                    <div class="cover-2"></div>
+                    <div class="cover-1"></div>
+                    
+                </div>
+            </div>
+            <div class="remove escondido">
+                <p>Deseja remover o cliente <span id="clinome"></span>?</p>
+                <p class="error errorR escondido">Estamos equivocando nos bastidores aqui foi mal :c</p>
+                <div class="btn" id="btnRemove" onclick="removerCliente(this)">Confirmar</div>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="script.js"></script>
 

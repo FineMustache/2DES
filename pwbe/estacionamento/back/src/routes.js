@@ -16,7 +16,12 @@ router.get("/estacionamento/entradas", EntradasController.listarEntradas);
 router.get("/estacionamento/entrada/:id_vaga", EntradasController.listarEntrada);
 
 router.post("/estacionamento/entradas", EntradasController.cadastrarEntrada);
+router.post("/estacionamento/clientes", ClientesController.cadastrarCliente);
 
 router.put("/estacionamento/entradas", EntradasController.editarEntrada);
+
+router.delete("/estacionamento/clientes", ClientesController.excluirCliente);
+router.delete("/estacionamento/entradas", EntradasController.excluirEntrada);
+router.delete("/estacionamento/veiculos", VeiculosController.excluirVeiculo);
 
 module.exports = router;

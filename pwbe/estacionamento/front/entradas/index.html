@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -11,56 +11,66 @@
 </head>
 
 <body onLoad="carregar()">
-    <div class="modal cadastrar model">
-        <div class="modal-content">
-            <button onClick="fecharModal()"> <img class="icone"
-                    src="https://cdn.icon-icons.com/icons2/1674/PNG/512/close_111152.png" alt="Icone de Fechar">
-            </button>
-            <div class="modal-content-body">
-                <input type="text" id="inputNome" placeholder="Nome">
-                <input type="text" id="inputPlaca" placeholder="Placa">
-                <input type="text" id="inputModelo" placeholder="Modelo">
-                <input type="text" id="inputCor" placeholder="Cor">
-                <input type="text" id="inputTipo" placeholder="Tipo de veiculo">
-                <input type="text" id="inputVaga" placeholder="Vaga">
-                <input type="text" id="inputEntrada" placeholder="Entrada">
-                <input type="text" id="inputSaida" placeholder="Saída">
-                <input type="text" id="inputValor" placeholder="Valor">
+    <header>
+        <nav>
+            <a href="../clientes/index.html">Clientes</a>
+            <a href="../vagas/index.html">Vagas</a>
+            <a href="../entradas/index.html">Entradas</a>
+            <a href="../veiculos/index.html">Veiculos</a>
+        </nav>
+        
+    </header>
+
+    <div class="page">
+        <div class="page-top">
+            <span class="page-title">Entradas</span>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Placa</th>
+                        <th>Modelo</th>
+                        <th>Cor</th>
+                        <th>Tipo</th>
+                        <th>Vaga</th>
+                        <th>Data Entrada</th>
+                        <th>Data Saída</th>
+                        <th>Valor</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="corpo">
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+    <div class='modal escondido'>
+        <div class='modal-container'>
+            <div class="modal-top">
             </div>
-            <div class="modal-content-footer">
-                <button onClick="editar()" class="btn confirm">Cadastrar</button>
-                <button onClick="fecharModal()" class="btn cancel">Cancelar</button>
+            <span class='close' onclick='toggleModal()'>×</span>
+            <div class="loading escondido">
+                <div class="circle">
+                    <div class="loading-circle">
+                        <div class="inner-circle"></div>
+                    </div>
+                    <div class="check-long"></div>
+                    <div class="check-small"></div>
+                    <div class="cover-2"></div>
+                    <div class="cover-1"></div>
+                    
+                </div>
+            </div>
+            <div class="remove escondido">
+                <p>Deseja remover a entrada de ID <span id="entId"></span>?</p>
+                <p class="error errorR escondido">Estamos equivocando nos bastidores aqui foi mal :c</p>
+                <div class="btn" id="btnRemove" onclick="removerEntrada(this)">Confirmar</div>
             </div>
         </div>
     </div>
-    <header>
-        <a href="../clientes/index.html">Clientes</a>
-        <a href="../vagas/index.html">Vagas</a>
-        <a href="../entradas/index.html">Entradas</a>
-        <a href="../veiculos/index.html">Veiculos</a>
-    </header>
-
-    <main>
-        <h2>Entradas</h2>
-        <button class="btnCad" onClick="abrirModal()">Editar entrada</button>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome do cliente</th>
-                    <th>Placa</th>
-                    <th>Modelo</th>
-                    <th>Cor</th>
-                    <th>Tipo de veiculo</th>
-                    <th>Vaga</th>
-                    <th colspan="2">Entrada</th>
-                    <th colspan="2">Saída</th>
-                    <th>Valor</th>
-                </tr>
-            </thead>
-            <tbody id="corpo">
-            </tbody>
-        </table>
-    </main>
 </body>
 <script src="script.js"></script>
 

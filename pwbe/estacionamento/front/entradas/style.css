@@ -1,144 +1,378 @@
 *{
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
-th {
-    font-size: 20px;
-    display: table-cell;
-    vertical-align: inherit;
-    font-weight: bold;
-    text-align: -internal-center;
-    padding: 10px;
-}
-
-td {
-    display: table-cell;
-    vertical-align: inherit;
-    text-align: center;
-    padding: 10px;
-}
-.btn{
-    height: 20px;
-    width: 20px;
-    margin-left: 5px;
-    border-radius: 5px;
-    border: 1px solid gray;
-}
-.header{
-    display: flex;
-    justify-content: center;
-}
-.modal {
-    display: flex;
-    position: fixed;
-    width: 100vw;
+body, html{
     height: 100vh;
-    background-color: rgba(0,0,0,.5);
-    align-items: center;
-    justify-content: center;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.modal-content {
-    width: 350px;
-    background-color: #FFF;
-    border-radius: 20px;
-    position: relative;
+nav{
+    background-color: rgb(236, 173, 0);
+    height: 6vh;
     display: flex;
-    flex-direction: column;
-    padding: 20px 40px;
-    justify-content: space-evenly;
-}
-
-.model {
-    display: none;
-    visibility: hidden;
-}
-
-.modal-content > button {
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin: 10px;
-}
-
-.modal-content-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-top: 15px;
-}
-
-.icone {
-    width: 15px;
-}
-
-.modal-content-body {
-    margin-top: 10px;
-}
-
-.confirm {
-    padding: 10px 15px;
-    color: white;
-    width: max-content;
-    border-radius: 5px;
-    background-color: #2fd659;
     justify-content: center;
     align-items: center;
-    display: flex;
-}
-
-.cancel {
-    padding: 10px 15px;
-    color: white;
-    border-radius: 5px;
-    width: max-content;
-    background-color: #fa2828; 
-    justify-content: center;
-    align-items: center;
-    display: flex;
-}
-
-input {
-    width: 100%;
-    border: 1px solid gray;
-    border-radius: 5px;
-    outline: none;
-    padding: 5px 10px;
-    margin-top: 10px;
-}
-
-a{
-    text-decoration: none;
-    color: black;
-    margin: 10px;
-}
-
-a:hover{
-    cursor: pointer;
+    font-size: 16pt;
 }
 
 header{
-    padding: 10px;
-    text-align: center;
-    background-color: rgb(255, 220, 64);
+    position: absolute;
+    top: 0;
+    width: 100%;
 }
 
-h2{
-    text-align: center;
-    padding:10px;
-}
-
-.btnCad{
-    border-radius: 5px;
-    padding: 5px;
-    background-color: #2fd659;
-    border: none;
-    margin: 10px;
-}
-main{
+nav > a{
+    height: 100%;
+    display: flex;
     align-items: center;
+    padding: 0 12px;
+    color: black;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+nav > a:hover{
+    background-color: rgb(201, 147, 0);
+}
+
+.page{
+    height: 100%;
+    width: 100%;
+    padding: 10vh 15% 0 15%;
+    background-color: rgb(211, 211, 211);
     display: flex;
     flex-direction: column;
+}
+
+.page-title{
+    font-size: 20pt;
+}
+
+.table-container{
+    background-color: white;
+    padding: 40px;
+    width: 100%;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th{
+    border-right: 1px solid black;
+    padding: 20px;
+}
+
+td:last-child, th:last-child{
+    border-right: none;
+}
+
+tbody tr:last-child{
+    border-bottom: none;
+}
+
+tr{
+    border-bottom: 1px solid black;
+}
+
+td > img{
+    height: 25px;
+}
+
+tr > td:last-child:hover{
+    background-color: rgb(236, 173, 0);
+    cursor: pointer;
+}
+
+tbody > tr > td:last-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-top{
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.btnAdd{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    background: none;
+    border: 2px solid black;
+    color: black;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btnAdd:hover{
+    border-color: black;
+    color: black;
+    background-color: rgb(236, 173, 0);
+}
+
+.modal{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,.5);
+}
+
+.modal-container{
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+    min-width: 20%;
+    min-height: 20%;
+    padding-top: 65px;
+}
+
+.close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.escondido{
+    display: none!important
+}
+
+.modal-top{
+    background-color: rgb(236, 173, 0);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px 10px 0 0;
+    height: 50px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-control{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input{
+    flex: 3;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #444;
+}
+
+input:focus{
+    outline: none;
+    border-color: black;
+    box-shadow: 0 0 5px black;
+}
+
+label{
+    flex: 1;
+}
+
+.btn{
+    padding: 5px;
+    font-size: large;
+    color: black;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: rgb(201, 147, 0);
+}
+
+.error{
+    background-color: rgb(238, 148, 148);
+    color: rgb(112, 20, 20);
+    padding: 10px;
+}
+
+.loading{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle{
+    position: relative;
+}
+
+.loading-circle{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 5px solid rgb(201, 147, 0);
+    position: relative;
+    animation-name: load;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+
+.inner-circle{
+    height: 40px;
+    width: 40px;
+    border: 5px solid rgb(236, 173, 0);
+    border-radius: 40px 0 0 0;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+}
+
+.loading-circle::after{
+    width: 70px;
+    height: 70px;
+    border-radius: 70px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+}
+
+.check-small{
+    height: 5px;
+    width: 25px;
+    background-color: rgb(236, 173, 0);
+    position: absolute;
+    left: 15px;
+    top: 45px;
+    transform: rotateZ(50deg);
+    z-index: 2;
+}
+
+.check-long{
+    height: 5px;
+    width: 40px;
+    background-color: rgb(236, 173, 0);
+    position: absolute;
+    right: 15px;
+    top: 38px;
+    transform: rotateZ(-55deg);
+    z-index: 1;
+}
+
+.cover-1{
+    height: 5px;
+    width: 25px;
+    background-color: white;
+    position: absolute;
+    left: 15px;
+    top: 45px;
+    transform: rotateZ(50deg);
+    z-index: 2;
+}
+
+.cover-2{
+    height: 5px;
+    width: 40px;
+    background-color: white;
+    position: absolute;
+    right: 15px;
+    top: 38px;
+    transform: rotateZ(-55deg);
+    z-index: 1;
+}
+
+.animate-long{
+    animation-name: c2sai;
+    animation-timing-function: ease-out;
+    animation-delay: .2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-duration: .2s;
+}
+
+.animate-small{
+    animation-name: c1sai;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-duration: .2s;
+}
+
+.stop{
+    animation: none;
+}
+
+.round{
+    border-radius: 50%;
+}
+
+.fade-inner{
+    transition: .3s;
+    width: 80px;
+    height: 80px;
+}
+
+@keyframes load {
+    100%{
+        transform: rotateZ(-360deg);
+    }
+}
+
+@keyframes c1sai {
+    100%{
+        left: 50.15px;
+        top: 70px;
+        width: 0;
+    }
+}
+
+@keyframes c2sai {
+    100%{
+        left: 50.15px;
+        top: 10px;
+        width: 0;
+    }
+}
+
+.remove{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    font-size: large;
+}
+
+#entId{
+    color: rgb(236, 173, 0);
+}
+
+.nulo{
+    background-color: #ccc;
+}
+
+td{
+    height: 80px;
 }

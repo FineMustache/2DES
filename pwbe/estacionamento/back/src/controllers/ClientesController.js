@@ -31,7 +31,33 @@ function listarCliente(req, res) {
 };
 
 
+function cadastrarCliente(req, res) {
+    let query = `INSERT INTO clientes VALUES(DEFAULT, '${req.body.nome}', '${req.body.telefone}', '${req.body.endereco}')`;
+
+    conDB.query(query, (err, result) => {
+        if(err == null) {
+            res.json(req.body).status(200).end();
+        }else {
+            res.json(err).status(400).end();
+        }
+    })
+};
+
+function excluirCliente(req, res) {
+    let query = `DELETE FROM clientes WHERE id = ${req.body.id}`;
+
+    conDB.query(query, (err, result) => {
+        if(err == null) {
+            res.json(req.body).status(200).end();
+        }else {
+            res.json(err).status(400).end();
+        }
+    })
+};
+
 module.exports = {
     listarClientes,
-    listarCliente
+    listarCliente,
+    cadastrarCliente,
+    excluirCliente
 }
