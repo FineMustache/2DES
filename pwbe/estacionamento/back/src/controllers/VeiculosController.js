@@ -6,6 +6,18 @@ const conDB = mysql.createConnection({
     "database": "estacionamento"
 });
 
+function cadastrarVeiculo(req, res) {
+    let query = `INSERT INTO veiculos VALUES('${req.body.placa}', '${req.body.cor}', '${req.body.modelo}, '${req.body.tipo}')`;
+
+    conDB.query(query, (err, result) => {
+        if(err == null) {
+            res.json(req.body).status(200).end();
+        }else {
+            res.json(err).status(400).end();
+        }
+    })
+};
+
 function listarVeiculos(req, res) {
     let query = "SELECT * FROM veiculos";
     conDB.query(query, (err, result) => {
@@ -43,5 +55,6 @@ function excluirVeiculo(req, res) {
 module.exports = {
     listarVeiculos,
     listarVeiculo,
-    excluirVeiculo
+    excluirVeiculo,
+    cadastrarVeiculo
 }

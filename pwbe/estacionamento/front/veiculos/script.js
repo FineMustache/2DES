@@ -45,6 +45,64 @@ function toggleModal(){
     document.body.style.overflow = 'hidden'
 }
 
+function modalCad() {
+    document.querySelector('.form').classList.remove('escondido')
+    document.querySelector('.remove').classList.add('escondido')
+    document.querySelector('.loading').classList.add('escondido')
+    toggleModal()
+}
+
+function cadastrar() {
+    document.querySelector('.form').classList.toggle('escondido')
+    document.querySelector('.loading').classList.toggle('escondido')
+    let placa = document.querySelector("#placa").value
+    let cor = document.querySelector('#cor').value
+    let modelo = document.querySelector("#modelo").value
+    let tipo = document.querySelector('#tipo').value
+
+    const options = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: `{"placa": "${placa}","cor":"${cor}","modelo":"${modelo}", "tipo":"${tipo}}`
+      };
+
+      fetch('http://localhost:5000/estacionamento/veiculos', options)
+        .then(response => response.json())
+        .then(response => {
+            console.log(response)
+            if (response.placa !== null) {
+                document.querySelector(".cover-1").classList.add("animate-small")
+                document.querySelector(".cover-2").classList.add("animate-long")
+                document.querySelector(".loading-circle").classList.add("stop")
+                document.querySelector(".inner-circle").classList.add("round")
+                document.querySelector(".inner-circle").classList.add("fade-inner")
+                document.querySelector('#corpo').innerHTML = ""
+                carregar()
+                setTimeout(()=>{
+                    toggleModal()
+                    document.querySelector('.form').classList.toggle('escondido')
+                    document.querySelector('.loading').classList.toggle('escondido')
+                    document.querySelector(".cover-1").classList.remove("animate-small")
+                    document.querySelector(".cover-2").classList.remove("animate-long")
+                    document.querySelector(".loading-circle").classList.remove("stop")
+                    document.querySelector(".inner-circle").classList.remove("round")
+                    document.querySelector(".inner-circle").classList.remove("fade-inner")
+                }, 2000)
+            } else {
+                console.log(response)
+                document.querySelector('.form').classList.toggle('escondido')
+                document.querySelector('.loading').classList.toggle('escondido')
+                document.querySelector('.error').classList.remove('escondido')
+            }
+        })
+        .catch(err => {
+            console.log(err)
+            document.querySelector('.form').classList.toggle('escondido')
+            document.querySelector('.loading').classList.toggle('escondido')
+            document.querySelector('.error').classList.remove('escondido')
+        });
+}
+
 function removerCliente(btn) {
     document.querySelector('.remove').classList.toggle('escondido')
     document.querySelector('.loading').classList.toggle('escondido')

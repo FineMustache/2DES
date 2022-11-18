@@ -368,3 +368,10 @@ label{
 #carplaca{
     color: rgb(236, 173, 0);
 }
+
+.form-control > select{
+    flex: 3;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #444;
+}

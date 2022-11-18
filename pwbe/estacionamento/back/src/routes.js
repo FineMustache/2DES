@@ -17,6 +17,7 @@ router.get("/estacionamento/entrada/:id_vaga", EntradasController.listarEntrada)
 
 router.post("/estacionamento/entradas", EntradasController.cadastrarEntrada);
 router.post("/estacionamento/clientes", ClientesController.cadastrarCliente);
+router.post("/estacionamento/veiculos", VeiculosController.cadastrarVeiculo);
 
 router.put("/estacionamento/entradas", EntradasController.editarEntrada);
 

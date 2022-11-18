@@ -50,18 +50,25 @@
             <span class='close' onclick='toggleModal()'>×</span>
             <div class="form">
                 <div class="form-control">
-                    <label for="nome">Nome</label>
-                    <input type="text" id="nome">
+                    <label for="placa">Placa</label>
+                    <input type="text" id="placa">
                 </div>
                 <div class="form-control">
-                    <label for="tel">Telefone</label>
-                    <input type="tel" id="tel" onkeypress="telMask(event)">
+                    <label for="cor">Cor</label>
+                    <input type="text" id="cor">
                 </div>
                 <div class="form-control">
-                    <label for="end">Endereço</label>
-                    <input type="text" id="end">
+                    <label for="modelo">Modelo</label>
+                    <input type="text" id="modelo">
                 </div>
-                <p class="error escondido">Deu ruim aqui debaixo dos panos tenta dnv daqui a pouco :c</p>
+                <div class="form-control">
+                    <label for="tipo">Tipo</label>
+                    <select name="tipo" id="tipo">
+                        <option value="carro">Carro</option>
+                        <option value="moto">Moto</option>
+                    </select>
+                </div>
+                <p class="error escondido">Erro interno do servidor. Tente novamente mais tarde.</p>
                 <button class="btn" onclick="cadastrar()">Cadastrar</button>
             </div>
             <div class="loading escondido">
@@ -78,7 +85,7 @@
             </div>
             <div class="remove escondido">
                 <p>Deseja remover o veiculo de placa <span id="carplaca"></span>?</p>
-                <p class="error errorR escondido">Estamos equivocando nos bastidores aqui foi mal :c</p>
+                <p class="error errorR escondido">Erro! Verifique se o veículo possui entradas cadastradas.</p>
                 <div class="btn" id="btnRemove" onclick="removerCliente(this)">Confirmar</div>
             </div>
         </div>
